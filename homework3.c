@@ -19,10 +19,10 @@ int main(void)
     initGPIO();
     // Initialize Timer0 to provide a one second count interval for updating LED2.
     // YOU MUST WRITE THIS FUNCTION IN myTimer.c
-    initTimer(TIMER32_0_BASE, TIMER0_PRESCALER, TIMER0_COUNT);
+    initTimer(TIMER0, TIMER0_PRESCALER, TIMER0_COUNT);
     // Initialize Timer1 to provide a one millisecond count interval for updating the button history.
     // YOU MUST WRITE THIS FUNCTION IN myTimer.c
-    initTimer(TIMER32_1_BASE, TIMER1_PRESCALER, TIMER1_COUNT);
+    initTimer(TIMER1, TIMER1_PRESCALER, TIMER1_COUNT);
 
     while(1)
     {
