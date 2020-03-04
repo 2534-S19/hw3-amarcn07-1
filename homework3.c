@@ -35,6 +35,7 @@ int main(void)
 
         // TODO: If Timer0 has expired, increment count0.
         // YOU MUST WRITE timer0expired IN myTimer.c
+        if timer0Expired(void)
 
 
 
@@ -64,7 +65,26 @@ void initBoard()
 // Since count is an unsigned integer, you can mask the value in some way.
 void changeLaunchpadLED2(unsigned int count)
 {
+    count = count % 10;
+    switch (count)
+    {
+    case 0:
+        turnOff_LaunchpadLED2Blue();
+        turnOff_LaunchpadLED2Green();
+        turnOff_LaunchpadLED2Red();
+        break;
+    case 1:
+        turnOff_LaunchpadLED2Blue();
+        turnOff_LaunchpadLED2Green();
+        turnOn_LaunchpadLED2Red();
+        break;
+    case 2:
+        turnOff_LaunchpadLED2Blue();
+        turnOn_LaunchpadLED2Green();
+        turnOff_LaunchpadLED2Red();
+        break;
 
+    }
 }
 
 // TODO: Maybe the value of a count variable to a color for the Boosterpack LED
@@ -76,7 +96,7 @@ void changeBoosterpackLED(unsigned int count)
 
 // TODO: Create a button state machine.
 // The button state machine should return true or false to indicate a completed, debounced button press.
-bool fsmBoosterpackButtonS1(unsigned int buttonhistory)
+bool fsmBoosterpackButtonS1(unsigned char buttonhistory)
 {
     bool pressed = false;
 

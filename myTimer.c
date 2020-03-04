@@ -45,7 +45,7 @@ bool timer1Expired(void)
     unsigned int CurrentSnap;
     bool returnValue;
 
-    CurrentSnap = Timer32_getValue(TIMER32_0_BASE);
+    CurrentSnap = Timer32_getValue(TIMER32_1_BASE);
     returnValue = (CurrentSnap > PreviousSnap);
     PreviousSnap = CurrentSnap;
     return returnValue;
