@@ -30,5 +30,5 @@ bool timer1Expired(void);
 #define TIMER1_COUNT        3000
 
 // TODO: Define any constants that are local to myTimer.c using #define
-
+//NA
 #endif /* MYTIMER_H_ */
